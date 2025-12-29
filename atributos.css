@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #7b2ff7;
+    --primary-glow: rgba(123, 47, 247, 0.4);
+    --secondary: #00f2ff;
+    --bg-dark: #0a0a0c;
+    --card-bg: #111116;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(123, 47, 247, 0.2);
+    --text: #e0e0e0;
+}
+
+.modern-ui {
+    background: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+/* Header Refinado */
+.header-jjk {
+    background: linear-gradient(135deg, #160a2c 0%, #0a0a0c 100%);
+    padding: 50px 40px;
+    border-bottom: 2px solid var(--primary);
+    position: relative;
+}
+
+.header-jjk h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -1px;
+    color: #fff;
+}
+
+.header-jjk h1 span {
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.header-jjk p {
+    margin: 10px 0 0;
+    color: #888;
+    font-size: 14px;
+    max-width: 500px;
+}
+
+/* Seções */
+.section { padding: 35px 40px; border-bottom: 1px solid var(--glass); }
+.section h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.section h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* Atributos Grid */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stat-card {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat-card h3 { font-size: 13px; text-transform: uppercase; color: #666; margin-bottom: 15px; letter-spacing: 1px; }
+
+/* Tabs */
+.tab-nav { display: flex; gap: 8px; margin-bottom: 25px; background: rgba(0,0,0,0.3); padding: 6px; border-radius: 12px; }
+.tab-button {
+    flex: 1; text-align: center; padding: 12px; cursor: pointer; border-radius: 8px;
+    font-weight: 700; font-size: 12px; transition: 0.3s; color: #555; border: none; background: none;
+}
+.tab-button.active { background: var(--primary); color: #fff; box-shadow: 0 4px 15px var(--primary-glow); }
+
+.tab-pane { display: none; }
+.tab-pane.active { display: block; animation: fadeIn 0.4s ease; }
+
+/* Aptidões Grid */
+.apt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.apt-item {
+    background: rgba(255,255,255,0.02);
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: 0.2s;
+}
+
+.apt-item:hover { background: rgba(123, 47, 247, 0.05); border-color: var(--primary); }
+.apt-item span { color: #999; }
+.apt-item b { color: #fff; }
+.new-item { border-left: 3px solid var(--secondary); }
+
+/* Tabelas e Ranks */
+.table-wrap { overflow-x: auto; margin-top: 15px; }
+.rpg-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rpg-table th { background: var(--primary); color: #fff; padding: 12px; text-align: left; }
+.rpg-table td { padding: 10px; border-bottom: 1px solid var(--glass); }
+
+.rank-row {
+    display: flex; align-items: center; padding: 15px; background: var(--glass);
+    margin-bottom: 8px; border-radius: 10px; gap: 20px;
+}
+.rank-row b { min-width: 120px; color: var(--primary); font-family: 'Rajdhani', sans-serif; font-size: 18px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+    .stats-grid, .apt-grid { grid-template-columns: 1fr; }
+    .header-jjk { padding: 30px 20px; }
+    .header-jjk h1 { font-size: 32px; }
+}
